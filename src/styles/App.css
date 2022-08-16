@@ -2,45 +2,61 @@
   text-align: center;
 }
 
-.circle{
+.circleContainer{
   position:absolute;
   top:50vh;
   left:50vw;
+  transform:translate(-50%, -50%);
   height:10vw;
   width:10vw;
-  transform:translate(-50%, -45vh);
+}
+
+.circle{
+  position:absolute;
+  height:10vw;
+  width:10vw;
+  transform:translateY(-35vh);
   border-radius: 50%;
   background-image: linear-gradient(red, yellow);
-  animation: circle-start 5s 0s, circle-start-2 5s 5s;
+  animation: circle-start 2s 0s, circle-start-2 2s 2s;
   z-index:100;
 }
 
 #circle2{
-  transform:rotate(90deg) translate(-50%, -45vh);
+  transform:rotate(90deg) translateY(-35vh);
   background-image: linear-gradient(blue, yellow);
   z-index:99;
-  animation: circle-start 5s 0s, circle-start-2 5s 5s, circle2 5s 10s;
+  animation: circle-start 2s 0s, circle-start-2 2s 2s, circle2 2s linear 4s;
 }
 
 #circle3{
-  transform:rotate(180deg) translate(-50%, -45vh);
+  transform:rotate(180deg) translateY(-35vh);
   background-image: linear-gradient(green, yellow);
+  z-index:97;
+  animation: circle-start 2s 0s, circle-start-2 2s 2s, circle3 4s linear 4s;
+}
+
+#circle4{
+  transform:rotate(270deg) translateY(-35vh);
+  background-image: linear-gradient(green, purple);
   z-index:98;
-  animation: circle-start 5s 0s, circle-start-2 5s 5s, circle2 5s 10s;
+  animation: circle-start 2s 0s, circle-start-2 2s 2s, circle4 6s linear 4s;
 }
 
 
 
 @keyframes circle-start {
   0% {
-    transform:rotate(0) translate(-50%, -50%);
-    top:50vh;
+    top:50%;
+    left:50%;
+    transform:translateY(0);
     height:0vw;
     width:0vw;
   }
   100% {
-    transform:rotate(0) translate(-50%, -50%);
-    top:50vh;
+    transform:translateY(0);
+    top:0%;
+    left:0%;
     height:10vw;
     width:10vw;
   }
@@ -48,19 +64,37 @@
 
 @keyframes circle-start-2 {
   0%{
-    transform:rotate(0) translate(-50%, -50%);
+    transform:rotate(0) translateY(0);
   }
   100%{
-    transform:rotate(0) translate(-50%, -45vh);
+    transform:rotate(0) translateY(-35vh);
   }
 }
 
 @keyframes circle2 {
   0%{
-    transform:rotate(0) translate(-50%, -45vh);
+    transform:rotate(0) translateY(-35vh);
   }
   100%{
-    transform:rotate(0) translate(-50%, -45vh);
+    transform:rotate(90) translateY(-35vh);
+  }
+}
+
+@keyframes circle3 {
+  0%{
+    transform:rotate(0) translateY(-35vh);
+  }
+  100%{
+    transform:rotate(180) translateY(-35vh);
+  }
+}
+
+@keyframes circle4 {
+  0%{
+    transform:rotate(0) translateY(-35vh);
+  }
+  100%{
+    transform:rotate(270) translateY(-35vh);
   }
 }
 
